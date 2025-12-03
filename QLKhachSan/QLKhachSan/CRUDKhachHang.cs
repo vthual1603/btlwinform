@@ -14,7 +14,7 @@ namespace QLKhachSan
 
     internal class CRUDKhachHang
     {
-        private string connecting = @"Data Source=localhost,1433;Initial Catalog=qlkhachsan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private string connecting = @"Data Source=HUAL;Initial Catalog=qlkhachsan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         
         public bool KiemTraLogin(string username, string password)

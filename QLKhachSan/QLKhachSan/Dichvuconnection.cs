@@ -8,7 +8,7 @@ namespace QLKhachSan
     {
         // CHUỖI KẾT NỐI: chỉnh lại theo máy bạn nếu cần
         private readonly string connecting =
-            @"Data Source=localhost,1433;Initial Catalog=qlkhachsan;Integrated Security=True;TrustServerCertificate=True";
+            @"Data Source=HUAL;Initial Catalog=qlkhachsan;Integrated Security=True;TrustServerCertificate=True";
 
         // ===== DANH MỤC DỊCH VỤ (bảng dichvu) =====
         public DataTable LayDanhSach()

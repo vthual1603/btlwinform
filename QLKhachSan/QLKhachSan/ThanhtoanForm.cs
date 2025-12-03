@@ -10,7 +10,7 @@ namespace QlKhachSan
 {
     public partial class ThanhtoanForm : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=localhost,1433;Initial Catalog=qlkhachsan;Integrated Security=True;Encrypt=False;");
+        SqlConnection conn = new SqlConnection(@"Data Source=HUAL;Initial Catalog=qlkhachsan;Integrated Security=True;Encrypt=False;");
 
         public ThanhtoanForm()
         {

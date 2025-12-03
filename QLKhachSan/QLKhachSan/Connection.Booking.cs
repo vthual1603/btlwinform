@@ -8,8 +8,8 @@ namespace QLKhachSan
     public static class BookingConnection
     {
         private const string ConnectionString =
-            @"Data Source=localhost,1433;Initial Catalog=qlkhachsan;Integrated Security=True;TrustServerCertificate=True";
-
+            @"Data Source=HUAL;Initial Catalog=qlkhachsan;Integrated Security=True;TrustServerCertificate=True";
+       
         //---------- HÀM CƠ BẢN ----------
 
         public static SqlConnection GetConnection()

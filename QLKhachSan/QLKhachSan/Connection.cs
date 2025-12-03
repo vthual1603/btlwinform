@@ -10,7 +10,7 @@ namespace QlKhachSan
     {
         // Chuỗi kết nối SQL Server (có thể thay đổi nếu cần)
         private static string stringConnection =
-            @"Data Source=localhost,1433;Initial Catalog=qlkhachsan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            @"Data Source=HUAL;Initial Catalog=qlkhachsan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         // Phương thức trả về đối tượng SqlConnection
         public static SqlConnection GetSqlConnection()

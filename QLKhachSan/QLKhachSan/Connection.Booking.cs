@@ -9,8 +9,7 @@ namespace QLKhachSan
     {
         private const string ConnectionString =
             @"Data Source=HUAL;Initial Catalog=qlkhachsan;Integrated Security=True;TrustServerCertificate=True";
-       
-        //---------- HÀM CƠ BẢN ----------
+ 
 
         public static SqlConnection GetConnection()
         {
@@ -62,7 +61,7 @@ namespace QLKhachSan
             }
         }
 
-        //---------- LẤY DỮ LIỆU ----------
+
 
         public static DataTable GetAvailableRooms()
         {
@@ -106,9 +105,6 @@ namespace QLKhachSan
             return ExecuteQuery(sql);
         }
 
-        //===============================================================
-        // 1. CHỨC NĂNG THÊM MỚI (INSERT)
-        //===============================================================
         public static void ThemDatPhong(string mahd, string makh, string maph, DateTime ngayBatDau, DateTime ngayKetThuc)
         {
             using (var conn = new SqlConnection(ConnectionString))
@@ -117,7 +113,7 @@ namespace QLKhachSan
                 SqlTransaction tran = conn.BeginTransaction();
                 try
                 {
-                    // B1: Kiểm tra tình trạng phòng
+
                     string sqlCheckPhong = "SELECT tinhtrang, giaph FROM phong WHERE maph = @maph";
                     string tinhTrang = "";
                     int giaPh = 0;
@@ -139,7 +135,7 @@ namespace QLKhachSan
                     if (tinhTrang == "hết" || tinhTrang == "het")
                         throw new Exception($"Phòng {maph} đã có người thuê (Tình trạng: hết). Vui lòng chọn phòng khác.");
 
-                    // B2: Kiểm tra hóa đơn (Logic gộp hóa đơn)
+
                     string sqlCheckHD = "SELECT makh FROM datphong WHERE mahd = @mahd";
                     object existMakh = null;
                     using (var cmd = new SqlCommand(sqlCheckHD, conn, tran))
@@ -150,7 +146,7 @@ namespace QLKhachSan
 
                     bool hdTonTai = (existMakh != null && existMakh != DBNull.Value);
 
-                    // Nếu HD tồn tại, bắt buộc Khách hàng phải trùng khớp
+     
                     if (hdTonTai)
                     {
                         if (existMakh.ToString().Trim() != makh.Trim())
@@ -158,7 +154,7 @@ namespace QLKhachSan
                     }
                     else
                     {
-                        // Nếu HD chưa tồn tại -> Tạo bảng datphong trước
+
                         string sqlInsertHD = "INSERT INTO datphong(mahd, makh, ngaybatdau, ngayketthuc) VALUES(@mahd, @makh, @nbd, @nkt)";
                         using (var cmd = new SqlCommand(sqlInsertHD, conn, tran))
                         {
@@ -170,7 +166,7 @@ namespace QLKhachSan
                         }
                     }
 
-                    // B3: Tính tiền
+
                     int soNgay = (ngayKetThuc.Date - ngayBatDau.Date).Days;
                     if (soNgay <= 0) soNgay = 1;
                     int thanhToan = giaPh * soNgay;
@@ -204,9 +200,7 @@ namespace QLKhachSan
             }
         }
 
-        //===============================================================
-        // 2. CHỨC NĂNG SỬA (UPDATE)
-        //===============================================================
+
         public static void SuaDatPhong(string mahd, string maph, DateTime ngayBatDau, DateTime ngayKetThuc)
         {
             using (var conn = new SqlConnection(ConnectionString))
@@ -276,9 +270,6 @@ namespace QLKhachSan
             }
         }
 
-        //===============================================================
-        // 3. CHỨC NĂNG XÓA (DELETE)
-        //===============================================================
         public static void XoaDatPhong(string mahd, string maph)
         {
             using (var conn = new SqlConnection(ConnectionString))

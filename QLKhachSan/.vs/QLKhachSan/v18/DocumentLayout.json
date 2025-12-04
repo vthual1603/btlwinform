@@ -3,64 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|c:\\users\\hualv\\onedrive\\documents\\c#\\btlwinform\\qlkhachsan\\qlkhachsan\\phongcrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\phongcrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|c:\\users\\hualv\\onedrive\\documents\\c#\\btlwinform\\qlkhachsan\\qlkhachsan\\customerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\customerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\cruddichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\cruddichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\thanhtoanform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\thanhtoanform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\thanhtoanform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\thanhtoanform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\dichvuconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\dichvuconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\dichvuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\dichvuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\customerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\customerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\crudkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\crudkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\cruddichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\cruddichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\bookingdesk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\bookingdesk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\bookingdesk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\bookingdesk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|c:\\users\\hualv\\onedrive\\documents\\c#\\btlwinform\\qlkhachsan\\qlkhachsan\\connection.booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\connection.booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\connection.booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\connection.booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\dichvuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\dichvuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\qlkhachsan\\bookingdesk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE4E4FC8-58BB-403D-8376-A4D70350266C}|QLKhachSan\\QLKhachSan.csproj|solutionrelative:qlkhachsan\\bookingdesk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -73,95 +29,25 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "KhachHang.cs",
-              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\KhachHang.cs",
-              "RelativeDocumentMoniker": "QLKhachSan\\KhachHang.cs",
-              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\KhachHang.cs",
-              "RelativeToolTip": "QLKhachSan\\KhachHang.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T15:14:01.255Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PhongCRUD.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\PhongCRUD.cs",
-              "RelativeDocumentMoniker": "QLKhachSan\\PhongCRUD.cs",
-              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\PhongCRUD.cs [Design]",
-              "RelativeToolTip": "QLKhachSan\\PhongCRUD.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T01:42:10.794Z",
-              "EditorCaption": " [Design]"
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ThanhtoanForm.cs",
-              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\ThanhtoanForm.cs",
-              "RelativeDocumentMoniker": "QLKhachSan\\ThanhtoanForm.cs",
-              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\ThanhtoanForm.cs",
-              "RelativeToolTip": "QLKhachSan\\ThanhtoanForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Connection.Booking.cs",
+              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\Connection.Booking.cs",
+              "RelativeDocumentMoniker": "QLKhachSan\\Connection.Booking.cs",
+              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\Connection.Booking.cs",
+              "RelativeToolTip": "QLKhachSan\\Connection.Booking.cs",
+              "ViewState": "AgIAACQBAAAAAAAAAAAcwDABAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T15:14:16.524Z"
+              "WhenOpened": "2025-12-04T02:36:42.486Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CRUDDichVu.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\CRUDDichVu.cs",
-              "RelativeDocumentMoniker": "QLKhachSan\\CRUDDichVu.cs",
-              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\CRUDDichVu.cs [Design]",
-              "RelativeToolTip": "QLKhachSan\\CRUDDichVu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T14:58:19.167Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CustomerForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\CustomerForm.cs",
-              "RelativeDocumentMoniker": "QLKhachSan\\CustomerForm.cs",
-              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\CustomerForm.cs [Design]",
-              "RelativeToolTip": "QLKhachSan\\CustomerForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T14:58:19.167Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ThanhtoanForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\ThanhtoanForm.cs",
-              "RelativeDocumentMoniker": "QLKhachSan\\ThanhtoanForm.cs",
-              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\ThanhtoanForm.cs [Design]",
-              "RelativeToolTip": "QLKhachSan\\ThanhtoanForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T15:14:14.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Dichvuconnection.cs",
-              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\Dichvuconnection.cs",
-              "RelativeDocumentMoniker": "QLKhachSan\\Dichvuconnection.cs",
-              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\Dichvuconnection.cs",
-              "RelativeToolTip": "QLKhachSan\\Dichvuconnection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T15:13:49.498Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "DichvuForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\DichvuForm.cs",
               "RelativeDocumentMoniker": "QLKhachSan\\DichvuForm.cs",
@@ -172,43 +58,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CustomerForm.cs",
-              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\CustomerForm.cs",
-              "RelativeDocumentMoniker": "QLKhachSan\\CustomerForm.cs",
-              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\CustomerForm.cs",
-              "RelativeToolTip": "QLKhachSan\\CustomerForm.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T15:13:45.189Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CRUDKhachHang.cs",
-              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\CRUDKhachHang.cs",
-              "RelativeDocumentMoniker": "QLKhachSan\\CRUDKhachHang.cs",
-              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\CRUDKhachHang.cs",
-              "RelativeToolTip": "QLKhachSan\\CRUDKhachHang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T15:13:33.513Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BookingDesk.cs",
-              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\BookingDesk.cs",
-              "RelativeDocumentMoniker": "QLKhachSan\\BookingDesk.cs",
-              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\BookingDesk.cs",
-              "RelativeToolTip": "QLKhachSan\\BookingDesk.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T15:13:07.34Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 3,
               "Title": "BookingDesk.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\BookingDesk.cs",
               "RelativeDocumentMoniker": "QLKhachSan\\BookingDesk.cs",
@@ -219,19 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CRUDDichVu.cs",
-              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\CRUDDichVu.cs",
-              "RelativeDocumentMoniker": "QLKhachSan\\CRUDDichVu.cs",
-              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\CRUDDichVu.cs",
-              "RelativeToolTip": "QLKhachSan\\CRUDDichVu.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAgwAgBAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T14:58:19.165Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 1,
               "Title": "Connection.cs",
               "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\Connection.cs",
               "RelativeDocumentMoniker": "QLKhachSan\\Connection.cs",
@@ -240,18 +78,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T15:12:59.747Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Connection.Booking.cs",
-              "DocumentMoniker": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\Connection.Booking.cs",
-              "RelativeDocumentMoniker": "QLKhachSan\\Connection.Booking.cs",
-              "ToolTip": "C:\\Users\\hualv\\OneDrive\\Documents\\C#\\btlwinform\\QLKhachSan\\QLKhachSan\\Connection.Booking.cs",
-              "RelativeToolTip": "QLKhachSan\\Connection.Booking.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T15:09:58.535Z"
             }
           ]
         }

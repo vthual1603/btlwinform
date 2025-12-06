@@ -6,16 +6,16 @@ namespace QLKhachSan
 {
     internal class Dichvuconnection
     {
-        // CHUỖI KẾT NỐI: chỉnh lại theo máy bạn nếu cần
+
         private readonly string connecting =
             @"Data Source=HUAL;Initial Catalog=qlkhachsan;Integrated Security=True;TrustServerCertificate=True";
 
-        // ===== DANH MỤC DỊCH VỤ (bảng dichvu) =====
+
         public DataTable LayDanhSach()
         {
             var dt = new DataTable();
             using (var conn = new SqlConnection(connecting))
-            // SỬ DỤNG ALIAS TIẾNG VIỆT VÀ TIỀN TỐ N
+
             using (var da = new SqlDataAdapter("SELECT madv AS N'Mã DV', tendv AS N'Tên Dịch Vụ', dongia AS N'Đơn Giá' FROM dichvu", conn))
             {
                 da.Fill(dt);
@@ -23,12 +23,12 @@ namespace QLKhachSan
             return dt;
         }
 
-        // ===== COMBO NGUỒN =====
+
         public DataTable GetAllMaHD()
         {
             var dt = new DataTable();
             using (var conn = new SqlConnection(connecting))
-            // SỬ DỤNG ALIAS TIẾNG VIỆT VÀ TIỀN TỐ N
+
             using (var da = new SqlDataAdapter("SELECT mahd AS N'Mã HĐ' FROM datphong ORDER BY mahd", conn))
             {
                 da.Fill(dt);
@@ -40,7 +40,7 @@ namespace QLKhachSan
         {
             var dt = new DataTable();
             using (var conn = new SqlConnection(connecting))
-            // SỬ DỤNG ALIAS TIẾNG VIỆT VÀ TIỀN TỐ N
+
             using (var da = new SqlDataAdapter("SELECT maph AS N'Mã Phòng' FROM phong ORDER BY maph", conn))
             {
                 da.Fill(dt);
@@ -64,7 +64,7 @@ namespace QLKhachSan
             return dt;
         }
 
-        // ===== CT DỊCH VỤ (bảng ctdichvu JOIN dichvu) =====
+
         public DataTable GetCTDichVu(string mahd, string maph)
         {
             var dt = new DataTable();
@@ -89,7 +89,7 @@ namespace QLKhachSan
             return dt;
         }
 
-        // Trả về đúng 1 dòng (nếu bạn cần)
+
         public DataTable GetOneCTDichVu(string mahd, string maph, string madv)
         {
             var dt = new DataTable();
@@ -114,9 +114,9 @@ namespace QLKhachSan
             return dt;
         }
 
-        // (Các phương thức CRUD và DebugInfo ĐÃ ĐƯỢC CẬP NHẬT)
 
-        // ===== CRUD ctdichvu (ĐÃ SỬA ĐỂ CẬP NHẬT thanhtien) =====
+
+
         public int InsertCTDV(string mahd, string maph, string madv, int soluong)
         {
             using (var conn = new SqlConnection(connecting))
@@ -168,7 +168,7 @@ namespace QLKhachSan
             }
         }
 
-        // Debug info
+
         public (string Server, string Database, int SoDV) DebugInfo()
         {
             using (var conn = new SqlConnection(connecting))
@@ -196,7 +196,7 @@ namespace QLKhachSan
             }
         }
 
-        // === LẤY TẤT CẢ PHÒNG THEO 1 HỢP ĐỒNG ===
+
         public DataTable GetCTDichVu_AllRooms(string mahd)
         {
             var dt = new DataTable();

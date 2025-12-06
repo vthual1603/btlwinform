@@ -5,15 +5,13 @@ using System.Windows.Forms;
 
 namespace QLKhachSan
 {
-    public partial class BookingDesk : Form
+    public partial class DatPhongForm : Form
     {
-        public BookingDesk()
+        public DatPhongForm()
         {
             InitializeComponent();
             this.Load += BookingDesk_Load;
         }
-
-        //================ FORM LOAD ================
 
         private void BookingDesk_Load(object sender, EventArgs e)
         {
@@ -33,8 +31,6 @@ namespace QLKhachSan
             LoadPhongToGrid();
             LoadDatPhongToGrid();
         }
-
-        //================ LOAD DATA GRID ================
 
         private void LoadPhongToGrid()
         {
@@ -75,8 +71,7 @@ namespace QLKhachSan
                 if (dgvDatPhong.Columns["MaHD"] != null)
                 {
                     dgvDatPhong.Columns["MaHD"].HeaderText = "Mã HĐ";
-                    // Có thể ẩn hoặc hiện tùy bạn, hiện lên để dễ test
-                    // dgvDatPhong.Columns["MaHD"].Visible = false; 
+                  
                 }
                 if (dgvDatPhong.Columns["MaKH"] != null) dgvDatPhong.Columns["MaKH"].HeaderText = "Mã khách hàng";
                 if (dgvDatPhong.Columns["MaPhong"] != null) dgvDatPhong.Columns["MaPhong"].HeaderText = "Mã phòng";
@@ -90,7 +85,7 @@ namespace QLKhachSan
             }
         }
 
-        //================ HÀM THU THẬP & KIỂM TRA DỮ LIỆU ================
+       
 
         private bool ThuThapDuLieu(
             out string maHD,
@@ -145,8 +140,7 @@ namespace QLKhachSan
             dtpNgayTra.Value = DateTime.Today;
         }
 
-        //================ NÚT THÊM ================
-        // Logic: Dùng BookingConnection.ThemDatPhong
+       
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (!ThuThapDuLieu(out string maHD, out string maKH, out string maPhong,
@@ -159,13 +153,13 @@ namespace QLKhachSan
 
             try
             {
-                // GỌI HÀM THÊM MỚI
+               
                 BookingConnection.ThemDatPhong(maHD, maKH, maPhong, ngayNhan, ngayTra);
 
-                // Đổ lại mã HD vừa tạo lên textbox để người dùng biết
+             
                 txtMaHoaDon.Text = maHD;
 
-                // Tải lại dữ liệu
+            
                 LoadPhongToGrid();
                 LoadDatPhongToGrid();
 
@@ -177,15 +171,14 @@ namespace QLKhachSan
             }
         }
 
-        //================ NÚT SỬA ================
-        // Logic: Dùng BookingConnection.SuaDatPhong
+      
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (!ThuThapDuLieu(out string maHD, out string maKH, out string maPhong,
                                out DateTime ngayNhan, out DateTime ngayTra))
                 return;
 
-            // Sửa bắt buộc phải có Mã hóa đơn
+         
             if (string.IsNullOrEmpty(maHD))
             {
                 MessageBox.Show("Vui lòng chọn hóa đơn cần sửa (hoặc nhập Mã hóa đơn).", "Thiếu dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -200,8 +193,7 @@ namespace QLKhachSan
 
             try
             {
-                // GỌI HÀM SỬA
-                // Lưu ý: Hàm SuaDatPhong KHÔNG cần makh, vì nó chỉ update ngày và tiền dựa trên mahd và maph
+               
                 BookingConnection.SuaDatPhong(maHD, maPhong, ngayNhan, ngayTra);
 
                 LoadPhongToGrid();
@@ -215,8 +207,8 @@ namespace QLKhachSan
             }
         }
 
-        //================ NÚT XÓA ================
-        // Logic: Dùng BookingConnection.XoaDatPhong (Giữ nguyên)
+ 
+    
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string maHD = (txtMaHoaDon.Text ?? "").Trim();
@@ -237,7 +229,7 @@ namespace QLKhachSan
 
             try
             {
-                // GỌI HÀM XÓA
+                
                 BookingConnection.XoaDatPhong(maHD, maPhong);
 
                 ClearInputs();
@@ -252,11 +244,10 @@ namespace QLKhachSan
             }
         }
 
-        //================ CHUYỂN FORM (THANH TOÁN / DỊCH VỤ) ================
-
+        
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            // Giả sử nút Đăng ký dùng để chuyển sang Form Dịch vụ như code cũ
+            
             ChuyenFormDichVu();
         }
 
@@ -283,9 +274,7 @@ namespace QLKhachSan
             }
         }
 
-        //================ SỰ KIỆN CLICK GRIDVIEW ================
-
-        // Chọn phòng trống -> Đổ mã phòng lên TextBox
+   
         private void dgvPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -295,7 +284,7 @@ namespace QLKhachSan
             txtMaPhong.Text = val == null ? "" : val.ToString();
         }
 
-        // Chọn đặt phòng -> Đổ dữ liệu lên TextBox để Sửa/Xóa
+     
         private void dgvDatPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -320,7 +309,7 @@ namespace QLKhachSan
                 dtpNgayTra.Value = nt;
         }
 
-        //================ CÁC HANDLER THỪA (Do Designer tạo) ================
+     
         private void lblMaKH_Click_1(object sender, EventArgs e) { }
         private void lblNgayNhan_Click_1(object sender, EventArgs e) { }
         private void dtpNgayNhan_ValueChanged_1(object sender, EventArgs e) { }

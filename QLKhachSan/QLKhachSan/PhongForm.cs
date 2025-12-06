@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace QLKhachSan
 {
-    public partial class PhongCRUD : Form
+    public partial class PhongForm : Form
     {
         private readonly Connection pc = new Connection();
 
-        public PhongCRUD()
+        public PhongForm()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace QLKhachSan
             ClearInputs();
         }
 
-        // Load danh sách phòng
+
         private void LoadDuLieuPhong()
         {
             try
@@ -44,7 +44,7 @@ namespace QLKhachSan
             }
         }
 
-        // Load mã phòng còn trống (P101 → P505)
+
         private void LoadComboBoxMaPhong()
         {
             cbMaPhong.Items.Clear();
@@ -73,14 +73,14 @@ namespace QLKhachSan
             if (cbMaPhong.Items.Count > 0) cbMaPhong.SelectedIndex = 0;
         }
 
-        // Load tình trạng
+
         private void LoadComboBoxTinhTrang()
         {
             cbTinhTrang.Items.Clear();
             cbTinhTrang.Items.AddRange(new object[] { "Còn", "Hết" });
         }
 
-        // Tự động điền loại phòng theo mã
+
         private void cbMaPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbMaPhong.SelectedItem == null) return;
@@ -106,11 +106,11 @@ namespace QLKhachSan
                 txtDonGia.Text = "600000";
             }
 
-            // Khi chọn mã phòng mới → mặc định tình trạng là "Còn"
+
             cbTinhTrang.Text = "Còn";
         }
 
-        // Click dòng để sửa
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.RowIndex >= dataGridView1.Rows.Count - 1) return;
@@ -127,7 +127,7 @@ namespace QLKhachSan
             cbMaPhong.Enabled = false;
         }
 
-        // Làm sạch form
+
         private void ClearInputs()
         {
             cbMaPhong.Enabled = true;
@@ -135,10 +135,10 @@ namespace QLKhachSan
             txtLoaiPhong.Clear();
             txtDienTich.Clear();
             txtDonGia.Clear();
-            cbTinhTrang.Text = "Còn"; // Mặc định khi thêm mới
+            cbTinhTrang.Text = "Còn";
         }
 
-        // Kiểm tra dữ liệu (không bắt buộc chọn tình trạng khi thêm)
+
         private bool ValidateInputs(bool isAdding = true)
         {
             if (string.IsNullOrWhiteSpace(cbMaPhong.Text))
@@ -146,11 +146,11 @@ namespace QLKhachSan
                 MessageBox.Show("Vui lòng chọn mã phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-  
+
             return true;
         }
 
-        // THÊM PHÒNG – TỰ ĐỘNG GÁN "Còn"
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs(true)) return;
@@ -162,7 +162,7 @@ namespace QLKhachSan
                 try
                 {
                     pc.Command(sql);
-                    //MessageBox.Show("Thêm phòng thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     LoadDuLieuPhong();
                     LoadComboBoxMaPhong();
                     ClearInputs();
@@ -174,7 +174,7 @@ namespace QLKhachSan
             }
         }
 
-        // SỬA PHÒNG
+
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs(false)) return;
@@ -191,7 +191,7 @@ namespace QLKhachSan
                 try
                 {
                     pc.Command(sql);
-                    //MessageBox.Show("Cập nhật thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     LoadDuLieuPhong();
                     ClearInputs();
                 }
@@ -202,7 +202,7 @@ namespace QLKhachSan
             }
         }
 
-        // XÓA PHÒNG
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
@@ -231,7 +231,7 @@ namespace QLKhachSan
             }
         }
 
-        // TÌM KIẾM
+
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string tk = cbMaPhong.Text.Trim();

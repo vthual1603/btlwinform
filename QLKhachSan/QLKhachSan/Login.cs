@@ -31,31 +31,31 @@ namespace QLKhachSan
                 return;
             }
 
-            // 2. Khởi tạo đối tượng CRUD
-            CRUDKhachHang crud = new CRUDKhachHang();
+
+            KhachHangconnection crud = new KhachHangconnection();
 
             try
             {
-                // 3. Gọi hàm kiểm tra đăng nhập từ lớp CRUD
+
                 bool dangNhapThanhCong = crud.KiemTraLogin(username, password);
 
-                // 4. Kiểm tra kết quả
+
                 if (dangNhapThanhCong)
                 {
-                    // Đăng nhập thành công
+
                     MainForm frmMain = new MainForm();
                     frmMain.Show();
                     this.Hide();
                 }
                 else
                 {
-                    // Đăng nhập thất bại
+
                     MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                // Bắt và hiển thị lỗi nếu có vấn đề về kết nối hoặc SQL
+
                 MessageBox.Show("Đã xảy ra lỗi kết nối với cơ sở dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -68,16 +68,16 @@ namespace QLKhachSan
         {
             if (chkHienMatKhau.Checked)
             {
-                
-                txtpassword.PasswordChar = '\0'; 
+
+                txtpassword.PasswordChar = '\0';
             }
             else
             {
-                
+
                 txtpassword.PasswordChar = '*';
             }
         }
 
-      
+
     }
 }

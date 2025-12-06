@@ -46,20 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookingDesk.cs">
+    <Compile Include="DatPhongForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookingDesk.Designer.cs">
-      <DependentUpon>BookingDesk.cs</DependentUpon>
+    <Compile Include="DatPhongForm.Designer.cs">
+      <DependentUpon>DatPhongForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connection.Booking.cs" />
-    <Compile Include="CRUDDichVu.cs">
+    <Compile Include="PhongConnection.cs" />
+    <Compile Include="Dichvu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CRUDDichVu.Designer.cs">
-      <DependentUpon>CRUDDichVu.cs</DependentUpon>
+    <Compile Include="Dichvu.Designer.cs">
+      <DependentUpon>Dichvu.cs</DependentUpon>
     </Compile>
-    <Compile Include="CRUDKhachHang.cs" />
+    <Compile Include="KhachHangconnection.cs" />
     <Compile Include="CustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,11 +67,11 @@
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Dichvuconnection.cs" />
-    <Compile Include="DichvuForm.cs">
+    <Compile Include="DatDvForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DichvuForm.Designer.cs">
-      <DependentUpon>DichvuForm.cs</DependentUpon>
+    <Compile Include="DatDvForm.Designer.cs">
+      <DependentUpon>DatDvForm.cs</DependentUpon>
     </Compile>
     <Compile Include="KhachHang.cs" />
     <Compile Include="Login.cs">
@@ -87,11 +87,11 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
-    <Compile Include="PhongCRUD.cs">
+    <Compile Include="PhongForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PhongCRUD.Designer.cs">
-      <DependentUpon>PhongCRUD.cs</DependentUpon>
+    <Compile Include="PhongForm.Designer.cs">
+      <DependentUpon>PhongForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,17 +101,17 @@
     <Compile Include="ThanhtoanForm.Designer.cs">
       <DependentUpon>ThanhtoanForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BookingDesk.resx">
-      <DependentUpon>BookingDesk.cs</DependentUpon>
+    <EmbeddedResource Include="DatPhongForm.resx">
+      <DependentUpon>DatPhongForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CRUDDichVu.resx">
-      <DependentUpon>CRUDDichVu.cs</DependentUpon>
+    <EmbeddedResource Include="Dichvu.resx">
+      <DependentUpon>Dichvu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DichvuForm.resx">
-      <DependentUpon>DichvuForm.cs</DependentUpon>
+    <EmbeddedResource Include="DatDvForm.resx">
+      <DependentUpon>DatDvForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -119,8 +119,8 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhongCRUD.resx">
-      <DependentUpon>PhongCRUD.cs</DependentUpon>
+    <EmbeddedResource Include="PhongForm.resx">
+      <DependentUpon>PhongForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

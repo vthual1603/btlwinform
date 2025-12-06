@@ -7,20 +7,20 @@ using System.Data.SqlClient;
 using System.Drawing;
 
 using System.Windows.Forms;
-using static QLKhachSan.CRUDKhachHang;
+using static QLKhachSan.KhachHangconnection;
 
 namespace QLKhachSan
 {
     public partial class CustomerForm : Form
     {
 
-        private CRUDKhachHang crudkhachhang;
+        private KhachHangconnection crudkhachhang;
         public CustomerForm()
         {
             InitializeComponent();
             cmbGioiTinh.SelectedIndex = 0;
 
-            crudkhachhang = new CRUDKhachHang();
+            crudkhachhang = new KhachHangconnection();
             try
             {
                 LoadData();
@@ -136,7 +136,7 @@ namespace QLKhachSan
 
                 kh.GioiTinh = cmbGioiTinh.SelectedItem.ToString();
 
-                // Gọi hàm Sua() để lưu thay đổi
+             
                 if (crudkhachhang.Sua(kh))
                 {
                     //MessageBox.Show("Cập nhật thông tin thành công!", "Thành công");
@@ -165,7 +165,7 @@ namespace QLKhachSan
 
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                // Gọi hàm Xoa và nhận mã trạng thái
+          
                 XoaTrangThai trangThai = crudkhachhang.Xoa(maKH);
 
                 switch (trangThai)
@@ -203,23 +203,22 @@ namespace QLKhachSan
 
             try
             {
-                // Bước 1: Gọi hàm tìm kiếm trả về một ĐỐI TƯỢNG KhachHang duy nhất
+             
                 KhachHang kh = crudkhachhang.TimKiem(maKH);
 
                 if (kh != null) // Nếu tìm thấy khách hàng
                 {
-                    // Bước 2: Để hiển thị một đối tượng lên DataGridView,
-                    // ta tạo một danh sách mới...
+                   
                     List<KhachHang> ketQua = new List<KhachHang>();
-                    // ...và chỉ thêm đối tượng vừa tìm được vào danh sách đó.
+                  
                     ketQua.Add(kh);
 
-                    // Bước 3: Gán danh sách chứa 1 kết quả này cho DataGridView
+                 
                     dataGridView1.DataSource = ketQua;
                 }
-                else // Nếu hàm TimTheoMa trả về null
+                else
                 {
-                    dataGridView1.DataSource = null; // Làm trống bảng
+                    dataGridView1.DataSource = null; 
                     MessageBox.Show("Không tìm thấy khách hàng có mã này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -236,34 +235,29 @@ namespace QLKhachSan
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Kiểm tra xem người dùng có click vào hàng hợp lệ không (tránh click vào tiêu đề cột)
+           
             if (e.RowIndex >= 0)
             {
-                // Lấy dòng hiện tại
+                
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
-                // Đổ dữ liệu từ các ô (Cells) vào các điều khiển tương ứng
-                // Lưu ý: Thứ tự index [0], [1]... phụ thuộc vào câu lệnh SELECT trong CRUDKhachHang
-
-                // 1. Mã Khách Hàng
+               
                 txtmakh.Text = row.Cells[0].Value?.ToString();
 
-                // 2. Tên Khách Hàng
                 txtName.Text = row.Cells[1].Value?.ToString();
 
-                // 3. Năm Sinh (Cần xử lý ngày tháng)
                 if (row.Cells[2].Value != null && row.Cells[2].Value != DBNull.Value)
                 {
                     dtpDate.Value = Convert.ToDateTime(row.Cells[2].Value);
                 }
 
-                // 4. Giới Tính
+               
                 cmbGioiTinh.Text = row.Cells[3].Value?.ToString();
 
-                // 5. Địa Chỉ
+             
                 txtaddress.Text = row.Cells[4].Value?.ToString();
 
-                // 6. Số Điện Thoại
+        
                 txtphone.Text = row.Cells[5].Value?.ToString();
             }
         }
@@ -276,16 +270,15 @@ namespace QLKhachSan
             {
                 try
                 {
-                    // 2. Gọi hàm OpenChildForm của MainForm để mở ThanhToanForm
-                    // Dùng constructor mặc định: new ThanhToanForm()
-                    mainForm.OpenChildForm(new BookingDesk());
+                 
+                    mainForm.OpenChildForm(new DatPhongForm());
 
-                    // 3. Đóng Form Dịch Vụ hiện tại (tùy chọn, nếu muốn thay thế hẳn Form hiện tại)
+                   
                     this.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi mở form Thanh toán: " + ex.Message, "Lỗi");
+                    MessageBox.Show("Lỗi khi mở form : " + ex.Message, "Lỗi");
                 }
             }
         }

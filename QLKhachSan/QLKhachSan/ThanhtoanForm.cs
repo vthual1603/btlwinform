@@ -139,12 +139,6 @@ WHERE ctdichvu.mahd = @mahd";
 
         private void loadtongtienthanhtoan(string mahd)
         {
-            //            string sql = @"SELECT ctdatphong.mahd, 
-            //       SUM(ctdatphong.thanhtoan + ctdichvu.thanhtien) AS tongtien
-            //FROM ctdatphong
-            //JOIN ctdichvu ON ctdatphong.mahd = ctdichvu.mahd
-            //WHERE ctdichvu.mahd = @mahd
-            //GROUP BY ctdatphong.mahd;";
             string sql = @"SELECT ctdatphong.mahd, 
        SUM(ctdatphong.thanhtoan) + COALESCE(SUM(ctdichvu.thanhtien), 0) AS tongtien
 FROM ctdatphong
@@ -194,11 +188,10 @@ GROUP BY ctdatphong.mahd;";
             {
                 try
                 {
-                    // 2. Gọi hàm OpenChildForm của MainForm để mở ThanhToanForm
-                    // Dùng constructor mặc định: new ThanhToanForm()
-                    mainForm.OpenChildForm(new BookingDesk());
 
-                    // 3. Đóng Form Dịch Vụ hiện tại (tùy chọn, nếu muốn thay thế hẳn Form hiện tại)
+                    mainForm.OpenChildForm(new DatPhongForm());
+
+
                     this.Close();
                 }
                 catch (Exception ex)

@@ -1,5 +1,4 @@
-﻿// === DichvuForm.cs (FIXED FOR VIETNAMESE ALIASES) ===
-using QlKhachSan;
+﻿using QlKhachSan; 
 using System;
 using System.ComponentModel;
 using System.Data;
@@ -21,61 +20,66 @@ namespace QLKhachSan
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
 
-            // Wire events
-
+            
             btnThem.Click += btnThem_Click;
 
             cboMaHD.SelectedIndexChanged += (s, ev) =>
             {
-                // Lọc danh sách phòng theo HĐ
-                var dtPhong = dv.GetMaPhongByMaHD(cboMaHD.SelectedValue?.ToString() ?? "");
-                if (dtPhong != null && dtPhong.Rows.Count > 0)
+               
+                cboMaPhong.DataSource = null;
+                cboMaPhong.Items.Clear();
+
+                string maHD = cboMaHD.SelectedValue?.ToString();
+                if (!string.IsNullOrEmpty(maHD))
                 {
-                    // Đảm bảo dùng TÊN CỘT CÓ DẤU [Mã Phòng]
-                    cboMaPhong.DisplayMember = "Mã Phòng";
-                    cboMaPhong.ValueMember = "Mã Phòng";
-                    cboMaPhong.DataSource = dtPhong;
+                   
+                    var dtPhong = dv.GetMaPhongByMaHD(maHD);
+
+                    if (dtPhong != null && dtPhong.Rows.Count > 0)
+                    {
+                        cboMaPhong.DisplayMember = "Mã Phòng";
+                        cboMaPhong.ValueMember = "Mã Phòng";
+                        cboMaPhong.DataSource = dtPhong;
+
+                        cboMaPhong.SelectedIndex = 0;
+                    }
                 }
+               
                 LoadCTDV();
             };
+
+        
             cboMaPhong.SelectedIndexChanged += (s, ev) => LoadCTDV();
 
-            // Click dòng bảng trái -> đổ mã DV vào textbox
+      
             dgvDichVu.CellClick += (s, ev) =>
             {
                 if (ev.RowIndex < 0) return;
                 var row = dgvDichVu.Rows[ev.RowIndex];
 
-                // Đảm bảo dùng TÊN CỘT CÓ DẤU [Mã DV]
+               
                 if (dgvDichVu.Columns.Contains("Mã DV"))
                     txtMaDV.Text = row.Cells["Mã DV"]?.Value?.ToString();
                 else
                     txtMaDV.Text = row.Cells[0]?.Value?.ToString();
             };
 
-            // Nạp nguồn combobox + danh mục dịch vụ
-            LoadCombos();
-            LoadDanhMucDichVu();
-            LoadCTDV(); // nạp lưới phải lần đầu
+        
+            LoadCombos();           // Chỉ nạp Hợp đồng, Phòng sẽ tự nạp theo sự kiện SelectedIndexChanged của HĐ
+            LoadDanhMucDichVu();    // Nạp bảng danh sách dịch vụ (trái)
+            LoadCTDV();             // Nạp bảng chi tiết (phải)
         }
 
-        // ===== COMBOS =====
+     
         private void LoadCombos()
         {
-            // Đảm bảo dùng TÊN CỘT CÓ DẤU [Mã HĐ]
-            // Hóa đơn
+            
             cboMaHD.DisplayMember = "Mã HĐ";
             cboMaHD.ValueMember = "Mã HĐ";
             cboMaHD.DataSource = dv.GetAllMaHD();
-
-            // Đảm bảo dùng TÊN CỘT CÓ DẤU [Mã Phòng]
-            // Phòng (ban đầu tất cả)
-            cboMaPhong.DisplayMember = "Mã Phòng";
-            cboMaPhong.ValueMember = "Mã Phòng";
-            cboMaPhong.DataSource = dv.GetAllMaPhong();
         }
 
-        // ===== BẢNG TRÁI =====
+  
         private void LoadDanhMucDichVu()
         {
             dgvDichVu.AutoGenerateColumns = true;
@@ -85,7 +89,28 @@ namespace QLKhachSan
             dgvDichVu.DataSource = dv.LayDanhSach();
         }
 
-        // ===== NÚT THÊM (UPSERT) (Giữ nguyên) =====
+
+        private void LoadCTDV()
+        {
+            var mahd = cboMaHD.SelectedValue?.ToString();
+           
+            var maph = cboMaPhong.SelectedValue?.ToString();
+
+    
+            if (string.IsNullOrWhiteSpace(mahd) || string.IsNullOrWhiteSpace(maph))
+            {
+                txtDvDaDat.DataSource = null;
+                return;
+            }
+
+            var dt = dv.GetCTDichVu(mahd, maph);
+            txtDvDaDat.AutoGenerateColumns = true;
+            txtDvDaDat.ReadOnly = true;
+            txtDvDaDat.AllowUserToAddRows = false;
+            txtDvDaDat.DataSource = dt;
+        }
+
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             var mahd = cboMaHD.SelectedValue?.ToString();
@@ -94,9 +119,10 @@ namespace QLKhachSan
 
             if (string.IsNullOrWhiteSpace(mahd) || string.IsNullOrWhiteSpace(maph) || string.IsNullOrWhiteSpace(madv))
             {
-                MessageBox.Show("Vui lòng chọn Dịch vụ và số lượng.");
+                MessageBox.Show("Vui lòng chọn Hợp đồng, Phòng và Dịch vụ.");
                 return;
             }
+
             if (!int.TryParse(txtSoLuong.Text.Trim(), out int sl) || sl <= 0)
             {
                 MessageBox.Show("Số lượng phải là số nguyên dương.");
@@ -105,42 +131,25 @@ namespace QLKhachSan
 
             try
             {
-                // Insert nếu chưa có, nếu trùng khóa thì Update
-                try { dv.InsertCTDV(mahd, maph, madv, sl); }
+                try
+                {
+                    dv.InsertCTDV(mahd, maph, madv, sl);
+                }
                 catch (System.Data.SqlClient.SqlException ex) when (ex.Number == 2627 || ex.Number == 2601)
-                { dv.UpdateCTDV(mahd, maph, madv, sl); }
+                {
+                    dv.UpdateCTDV(mahd, maph, madv, sl);
+                }
 
-                LoadCTDV(); // 🔁 nạp lại toàn bộ danh sách của (HĐ, Phòng)
-                MessageBox.Show("Đã thêm/cập nhật dịch vụ.");
+                LoadCTDV(); 
+                MessageBox.Show("Đã cập nhật dịch vụ thành công.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi thêm dịch vụ: " + ex.Message);
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message);
             }
         }
 
-        // ===== NÚT XÁC NHẬN: cập nhật số lượng (Giữ nguyên) =====
-
-
-        // ===== LƯỚI PHẢI: DỊCH VỤ ĐÃ ĐẶT (lọc theo (HĐ, Phòng)) (Giữ nguyên) =====
-        private void LoadCTDV()
-        {
-            var mahd = cboMaHD.SelectedValue?.ToString();
-            var maph = cboMaPhong.SelectedValue?.ToString();
-            if (string.IsNullOrWhiteSpace(mahd) || string.IsNullOrWhiteSpace(maph)) return;
-
-            var dt = dv.GetCTDichVu(mahd, maph); // chỉ phòng đang chọn
-            txtDvDaDat.AutoGenerateColumns = true;
-            txtDvDaDat.ReadOnly = true;
-            txtDvDaDat.AllowUserToAddRows = false;
-            txtDvDaDat.DataSource = dt;
-        }
-
-        private void DichvuForm_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             MainForm mainForm = this.ParentForm as MainForm;
@@ -149,11 +158,7 @@ namespace QLKhachSan
             {
                 try
                 {
-                    // 2. Gọi hàm OpenChildForm của MainForm để mở ThanhToanForm
-                    // Dùng constructor mặc định: new ThanhToanForm()
                     mainForm.OpenChildForm(new ThanhtoanForm());
-
-                    // 3. Đóng Form Dịch Vụ hiện tại (tùy chọn, nếu muốn thay thế hẳn Form hiện tại)
                     this.Close();
                 }
                 catch (Exception ex)

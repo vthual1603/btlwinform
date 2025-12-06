@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace QLKhachSan
 {
-    partial class BookingDesk
+    partial class DatPhongForm
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -77,7 +77,7 @@ namespace QLKhachSan
             this.dtpNgayNhan.Name = "dtpNgayNhan";
             this.dtpNgayNhan.Size = new System.Drawing.Size(336, 30);
             this.dtpNgayNhan.TabIndex = 3;
-            this.dtpNgayNhan.Value = new System.DateTime(2025, 12, 1, 0, 0, 0, 0);
+            this.dtpNgayNhan.Value = new System.DateTime(2025, 12, 7, 0, 0, 0, 0);
             this.dtpNgayNhan.ValueChanged += new System.EventHandler(this.dtpNgayNhan_ValueChanged_1);
             // 
             // lblMaHoaDon
@@ -133,7 +133,7 @@ namespace QLKhachSan
             this.dtpNgayTra.Name = "dtpNgayTra";
             this.dtpNgayTra.Size = new System.Drawing.Size(336, 30);
             this.dtpNgayTra.TabIndex = 9;
-            this.dtpNgayTra.Value = new System.DateTime(2025, 12, 1, 0, 0, 0, 0);
+            this.dtpNgayTra.Value = new System.DateTime(2025, 12, 8, 0, 0, 0, 0);
             this.dtpNgayTra.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // btnThem

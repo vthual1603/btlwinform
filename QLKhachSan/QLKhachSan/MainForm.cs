@@ -23,7 +23,7 @@ namespace QLKhachSan
 
         }
 
- 
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
@@ -48,11 +48,11 @@ namespace QLKhachSan
 
             activeForm = childForm;
 
-            childForm.TopLevel = false; // Quan trọng: Không phải là form cấp cao nhất
-            childForm.FormBorderStyle = FormBorderStyle.None; // Bỏ viền và thanh tiêu đề
-            childForm.Dock = DockStyle.Fill; // Lấp đầy panel
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
 
-            // Thêm form con vào danh sách controls của panel và hiển thị
+
             pnlContent.Controls.Add(childForm);
             pnlContent.Tag = childForm;
             childForm.BringToFront();
@@ -68,8 +68,8 @@ namespace QLKhachSan
 
         private void phongToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
-            OpenChildForm(new PhongCRUD());
+
+            OpenChildForm(new PhongForm());
         }
 
         private void ServiceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,12 +85,12 @@ namespace QLKhachSan
 
         private void dichvuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new CRUDDichVu());
+            OpenChildForm(new Dichvu());
         }
 
         private void đặtPhòngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new BookingDesk());
+            OpenChildForm(new DatPhongForm());
         }
     }
 }

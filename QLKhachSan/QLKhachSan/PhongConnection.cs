@@ -9,7 +9,7 @@ namespace QLKhachSan
     {
         private const string ConnectionString =
             @"Data Source=HUAL;Initial Catalog=qlkhachsan;Integrated Security=True;TrustServerCertificate=True";
- 
+
 
         public static SqlConnection GetConnection()
         {
@@ -146,7 +146,7 @@ namespace QLKhachSan
 
                     bool hdTonTai = (existMakh != null && existMakh != DBNull.Value);
 
-     
+
                     if (hdTonTai)
                     {
                         if (existMakh.ToString().Trim() != makh.Trim())
@@ -171,7 +171,7 @@ namespace QLKhachSan
                     if (soNgay <= 0) soNgay = 1;
                     int thanhToan = giaPh * soNgay;
 
-                    // B4: Thêm vào chi tiết đặt phòng (ctdatphong)
+
                     string sqlInsertCT = "INSERT INTO ctdatphong(mahd, maph, songaythue, thanhtoan) VALUES(@mahd, @maph, @sn, @tt)";
                     using (var cmd = new SqlCommand(sqlInsertCT, conn, tran))
                     {
@@ -182,7 +182,7 @@ namespace QLKhachSan
                         cmd.ExecuteNonQuery();
                     }
 
-                    // B5: Cập nhật phòng sang trạng thái 'hết'
+
                     string sqlUpdatePhong = "UPDATE phong SET tinhtrang = N'hết' WHERE maph = @maph";
                     using (var cmd = new SqlCommand(sqlUpdatePhong, conn, tran))
                     {
@@ -209,7 +209,7 @@ namespace QLKhachSan
                 SqlTransaction tran = conn.BeginTransaction();
                 try
                 {
-                    // B1: Kiểm tra xem dòng đặt phòng này có tồn tại không
+
                     string sqlCheck = "SELECT COUNT(*) FROM ctdatphong WHERE mahd = @mahd AND maph = @maph";
                     using (var cmd = new SqlCommand(sqlCheck, conn, tran))
                     {
@@ -220,7 +220,7 @@ namespace QLKhachSan
                             throw new Exception("Không tìm thấy thông tin đặt phòng để sửa (Sai mã HD hoặc Mã phòng).");
                     }
 
-                    // B2: Lấy giá phòng hiện tại để tính lại tiền
+
                     string sqlGia = "SELECT giaph FROM phong WHERE maph = @maph";
                     int giaPh = 0;
                     using (var cmd = new SqlCommand(sqlGia, conn, tran))
@@ -230,12 +230,12 @@ namespace QLKhachSan
                         if (obj != null) giaPh = Convert.ToInt32(obj);
                     }
 
-                    // B3: Tính toán lại
+
                     int soNgay = (ngayKetThuc.Date - ngayBatDau.Date).Days;
                     if (soNgay <= 0) soNgay = 1;
                     int thanhToanMoi = giaPh * soNgay;
 
-                    // B4: Cập nhật bảng ctdatphong
+
                     string sqlUpdateCT = @"UPDATE ctdatphong 
                                            SET songaythue = @sn, thanhtoan = @tt 
                                            WHERE mahd = @mahd AND maph = @maph";
@@ -248,9 +248,8 @@ namespace QLKhachSan
                         cmd.ExecuteNonQuery();
                     }
 
-                    // B5: Cập nhật ngày trong bảng datphong (nếu muốn đồng bộ ngày tổng của hóa đơn)
-                    // Lưu ý: Nếu hóa đơn có nhiều phòng, việc update ngày chung này có thể ảnh hưởng logic,
-                    // nhưng với bài toán cơ bản thì thường update theo lần sửa cuối.
+
+
                     string sqlUpdateHD = "UPDATE datphong SET ngaybatdau = @nbd, ngayketthuc = @nkt WHERE mahd = @mahd";
                     using (var cmd = new SqlCommand(sqlUpdateHD, conn, tran))
                     {
@@ -277,21 +276,21 @@ namespace QLKhachSan
             {
                 cmd.Connection = conn;
                 cmd.CommandType = CommandType.Text;
-                // Sử dụng Transaction để đảm bảo xóa sạch hoặc không xóa gì cả
+
                 cmd.CommandText = @"
                     BEGIN TRAN;
-                        -- 1. Xóa các dịch vụ đi kèm (nếu có) của phòng này trong hóa đơn này
+                        
                         DELETE FROM ctdichvu WHERE mahd = @mahd AND maph = @maph;
 
-                        -- 2. Xóa chi tiết đặt phòng
+                        
                         DELETE FROM ctdatphong WHERE mahd = @mahd AND maph = @maph;
 
-                        -- 3. Nếu hóa đơn này không còn phòng nào nữa -> Xóa luôn Hóa đơn cha
+                        
                         DELETE FROM datphong 
                         WHERE mahd = @mahd
                           AND NOT EXISTS (SELECT 1 FROM ctdatphong WHERE mahd = @mahd);
 
-                        -- 4. Trả lại trạng thái phòng thành 'còn'
+                        
                         UPDATE phong SET tinhtrang = N'còn' WHERE maph = @maph;
                     COMMIT TRAN;";
 
@@ -305,7 +304,7 @@ namespace QLKhachSan
                 }
                 catch (Exception ex)
                 {
-                    // Nếu lỗi hệ thống SQL thì throw ra
+
                     throw new Exception("Lỗi khi xóa: " + ex.Message);
                 }
             }

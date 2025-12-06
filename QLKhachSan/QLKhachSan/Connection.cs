@@ -1,4 +1,4 @@
-﻿// phongconnection.cs
+﻿
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -8,17 +8,17 @@ namespace QlKhachSan
     
     public class Connection
     {
-        // Chuỗi kết nối SQL Server (có thể thay đổi nếu cần)
+      
         private static string stringConnection =
             @"Data Source=HUAL;Initial Catalog=qlkhachsan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
-        // Phương thức trả về đối tượng SqlConnection
+      
         public static SqlConnection GetSqlConnection()
         {
             return new SqlConnection(stringConnection);
         }
 
-        // Constructor (không bắt buộc, để lại cho rõ ràng)
+       
         public Connection()
         {
         }

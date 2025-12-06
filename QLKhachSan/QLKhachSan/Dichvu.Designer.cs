@@ -1,6 +1,6 @@
 ﻿namespace QLKhachSan
 {
-    partial class CRUDDichVu
+    partial class Dichvu
     {
         /// <summary>
         /// Required designer variable.
